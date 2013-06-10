@@ -216,8 +216,6 @@
                              [_cardCVCField removeFromSuperview];
                          }];
     }
-    
-    [self.cardNumberField becomeFirstResponder];
 }
 
 - (void)stateMeta
