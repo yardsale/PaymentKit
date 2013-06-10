@@ -25,19 +25,20 @@
 
 - (BOOL)isValid;
 
-@property (nonatomic, readonly) UIView *opaqueOverGradientView;
-@property (nonatomic, readonly) PKCardNumber* cardNumber;
-@property (nonatomic, readonly) PKCardExpiry* cardExpiry;
-@property (nonatomic, readonly) PKCardCVC* cardCVC;
-@property (nonatomic, readonly) PKAddressZip* addressZip;
+@property (readonly, nonatomic) UIView *opaqueOverGradientView;
+@property (readonly, nonatomic) PKCardNumber* cardNumber;
+@property (readonly, nonatomic) PKCardExpiry* cardExpiry;
+@property (readonly, nonatomic) PKCardCVC* cardCVC;
+@property (readonly, nonatomic) PKAddressZip* addressZip;
 
-@property IBOutlet UIView* innerView;
-@property IBOutlet UIView* clipView;
-@property IBOutlet PKTextField* cardNumberField;
-@property IBOutlet PKTextField* cardExpiryField;
-@property IBOutlet PKTextField* cardCVCField;
-@property IBOutlet UIImageView* placeholderView;
-@property id <PKViewDelegate> delegate;
-@property (readonly) PKCard* card;
+@property (strong, readonly, nonatomic) UIView* innerView;
+@property (strong, readonly, nonatomic) UIView* clipView;
+@property (strong, readonly, nonatomic) PKTextField* cardNumberField;
+@property (strong, readonly, nonatomic) PKTextField* cardExpiryField;
+@property (strong, readonly, nonatomic) PKTextField* cardCVCField;
+@property (strong, readonly, nonatomic) UIImageView* placeholderView;
+
+@property (weak) id <PKViewDelegate> delegate;
+@property (strong, readonly) PKCard* card;
 
 @end
