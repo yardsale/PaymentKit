@@ -275,8 +275,8 @@
 
 - (void)setPlaceholderViewImage:(UIImage *)image
 {
-    if(![_placeholderView.image isEqual:image]) {
-        __weak UIView *previousPlaceholderView = _placeholderView;
+    if(![placeholderView.image isEqual:image]) {
+        __block __unsafe_unretained UIView *previousPlaceholderView = placeholderView;
         [UIView animateWithDuration:kPKViewPlaceholderViewAnimationDuration delay:0
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^
@@ -474,7 +474,7 @@
 
 - (void)checkValid
 {
-    if ([self isValid] && !isValidState) {
+    if ([self isValid]) {
         isValidState = YES;
 
         if ([self.delegate respondsToSelector:@selector(paymentView:withCard:isValid:)]) {
